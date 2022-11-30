@@ -6,7 +6,7 @@ import requests
 
 def get_tasks_from_employee(response, employee):
     """documentation"""
-    employee_tasks = lists()
+    employee_tasks = list()
 
     for task in response:
         if task.get('userId') == employee.get('id'):
@@ -15,7 +15,7 @@ def get_tasks_from_employee(response, employee):
                 'task': task.get('title'),
                 'completed': task.get('completed')
             }
-            employee_tasks.append(tasks_data)
+            employee_tasks.append(task_data)
     return employee_tasks
 
 
