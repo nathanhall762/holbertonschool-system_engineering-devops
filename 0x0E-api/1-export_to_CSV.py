@@ -16,7 +16,7 @@ if __name__ == '__main__':
     filename = '{emp_id}.csv'.format(emp_id=emp_id)
 
     res = requests.get(user_uri).json()
-    name = res.get('name')
+    username = res.get('username')
     res = requests.get(todo_uri).json()
 
     with open(filename, 'w', encoding='utf-8') as csv_file:
@@ -24,4 +24,4 @@ if __name__ == '__main__':
         for elem in res:
             status = elem.get('completed')
             title = elem.get('title')
-            writer.writerow([emp_id, name, status, title])
+            writer.writerow([emp_id, username, status, title])
